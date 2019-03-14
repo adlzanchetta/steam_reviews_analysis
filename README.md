@@ -1,4 +1,4 @@
-## Authors: 
+## Authors 
 Andre Zanchetta (https://github.com/adlzanchetta/steam_reviews_analysis)
 
 Dennis Nguyen-Do (https://github.com/SJHH-Nguyen-D/steam_reviews_analysis)
@@ -12,12 +12,10 @@ This is a machine-learning based culminating group project for our Neural Networ
 
 The model architecture diagram can be seen below: (subject to change)
 
-<<<<<<< HEAD
-![Architecture Word2Vec](https://github.com/adlzanchetta/steam_reviews_analysis/word2vec_skipgram_architecture.png)
-=======
+
 ![Architecture of Word2Vec](https://github.com/adlzanchetta/steam_reviews_analysis/word2vec_skipgram_architecture.png)
 
->>>>>>> development_dennis
+
 
 ## Data
 
@@ -65,10 +63,8 @@ This command lists all the containers that are running at the moment:
 ```bash
 sudo docker ps -a
 ```
-<<<<<<< HEAD
 
-=======
->>>>>>> development_dennis
+
 This command also lists all the containers that are running at the moment:
 ```bash
 sudo docker container ls
