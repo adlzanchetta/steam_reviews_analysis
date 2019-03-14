@@ -12,8 +12,7 @@ This is a machine-learning based culminating group project for our Neural Networ
 
 The model architecture diagram can be seen below: (subject to change)
 
-![architecture Word2Vec]https://github.com/adlzanchetta/steam_reviews_analysis/word2vec_skipgram_architecture.png)
-
+![Architecture Word2Vec](https://github.com/adlzanchetta/steam_reviews_analysis/word2vec_skipgram_architecture.png)
 
 ## Dataset
 
@@ -133,29 +132,39 @@ All python packages needed are listed in utils/requirements.txt file and can be 
 ## Docker Instructions
 
 To run this project as a Docker image, in the terminal, use these instructions to build the Dockerfile and run it. So long as you are in the same director, Docker will know which file is the dockerfile and run it, without you having to specify which file is the Dockerfile:
-
+```bash
 docker build -t steamreviewprojectcontainer .
-
+```
 To run this command below to run the container (assuming group_project_final directory is cloned into ~/steam_reviews_analysis in the terminal:
-
+```bash
 docker run --runtime=nvidia \
 -it \
 -v  ~/steam_reviews_analysis:/tmp \
 -w /tmp \
 --rm steamreviewprojectcontainer:latest \
 bash
-
+```
 This command lists all the containers that are running at the moment:
+```bash
 sudo docker ps -a
+```
 
 This command also lists all the containers that are running at the moment:
+```bash
 sudo docker container ls
-
+```
 If you haven't used the --rum option at run to remove the container upon termination of the program, you can remove the running container with this command:
+```bash
 sudo docker -rm <container_id>
-
+```
 This command lists all the images that are saved by Docker:
+```bash
 sudo docker image ls
-
+```
 This command removes the docker image:
+
+```bash
 sudo docker rmi -f <docker_image_id>
+```
+sudo docker rmi -f <docker_image_id>
+
