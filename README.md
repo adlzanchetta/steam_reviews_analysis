@@ -1,7 +1,9 @@
 ## Authors 
 
 Andre Zanchetta (https://github.com/adlzanchetta/steam_reviews_analysis)
+
 Dennis Nguyen-Do (https://github.com/SJHH-Nguyen-D/steam_reviews_analysis)
+
 Tiger Liu (https://github.com/uilregit/steam_reviews_analysis)
 
 
