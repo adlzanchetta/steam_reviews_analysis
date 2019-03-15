@@ -52,11 +52,11 @@ The link to the AWS S3 bucket containing the steam game review data for our proj
 ## Code
 The code for our project is partitioned into the following segments:
 
-* The [utils](https://github.com/adlzanchetta/steam_reviews_analysis/master/utils/) folder contains the necessary functions to read the datasets and visualize the plots, as well as the constants, abstracted from the main file for a cleaner script. An internal segment, *harvesters*, contains the scripts written specifically for the purpose of harvesting the data used.
-* The [utils.py](https://github.com/adlzanchetta/steam_reviews_analysis/master/utils/utils.py) file inside folder of that namesake that contains the necessary functions to read the datasets and visualize the plots.
-* The [harvesters](https://github.com/adlzanchetta/steam_reviews_analysis/master/utils/harvesters/) This directory contains the scripts that were required to request, pull and parse Steam game reviews from the Steam API and parse them into loadable formats for our analysis and modeling. The individual functions of the scripts are explained above.
-* The [constants.py](https://github.com/adlzanchetta/steam_reviews_analysis/master/utils/constants.py) file inside folder of that namesake that contains the necessary functions to read the datasets and visualize the plots.
-* The [main.py](https://github.com/adlzanchetta/steam_reviews_analysis/master/utils/main.py) This contains the main file for running our model. We use argparse to pass in the model hyperparameters and saving/loading options.
+* The [utils](https://github.com/adlzanchetta/steam_reviews_analysis/tree/master/utils) folder contains the necessary functions to read the datasets and visualize the plots, as well as the constants, abstracted from the main file for a cleaner script.
+* The [utils.py](https://github.com/adlzanchetta/steam_reviews_analysis/tree/master/utils/utils.py) file inside folder of that namesake that contains the necessary functions to read the datasets and visualize the plots.
+* The [harvesters](https://github.com/adlzanchetta/steam_reviews_analysis/tree/master/utils/harvesters) This directory contains the scripts that were required to request, pull and parse Steam game reviews from the Steam API and parse them into loadable formats for our analysis and modeling. The individual functions of the scripts are explained above.
+* The [constants.py](https://github.com/adlzanchetta/steam_reviews_analysis/tree/master/utils/constants.py) file inside folder of that namesake that contains the necessary functions to read the datasets and visualize the plots.
+* The [main.py](https://github.com/adlzanchetta/steam_reviews_analysis/main.py) This contains the main file for running our model. We use argparse to pass in the model hyperparameters and saving/loading options.
 
 ## Prerequisites
 All python packages needed are listed in utils/requirements.txt file and can be installed simply using the pip command for python3.6.

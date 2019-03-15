@@ -13,12 +13,9 @@ from tf.keras.initializers import RandomNormal
 from tf.keras.utils import plot_model
 
 from utils import utils
-from utils import constants
+from utils.contants import *
 
 class Word2Vec_Classifier(tf.keras.Model):
-	
-	model_architecture_name = constants.model_architecture_name
-	model_weights_directory = constants.model_weights_directory
 
 	def __init__(self, output_directory, vocab_size, input_target, input_context, vector_dim, verbose=False, load_init_weights=False):
 		super(Word2Vec_Classifier, self).__init__(name='Word2Vec_Classifier')
@@ -43,11 +40,11 @@ class Word2Vec_Classifier(tf.keras.Model):
 		self.verbose = verbose
 
 	def call(self, inputs, training=False):
-		target = self.Embedding(self.vocab_size, self.vector_dim, input_length=1, name='embedding', 
+		target = self.Embedding(self.vocab_size, self.vector_dim, input_length=1, name='target embedding', 
 			embeddings_initializer=self.RandomNormal(mean=0.0, stddev=1, seed=123), embeddings_regularizer=None, activity_regularizer=None, 
 			embeddings_constraint=None, mask_zero=False, input_length=None)(self.input_target)
 		target = self.Reshape((vector_dim, 1))(target)
-		context = self.Embedding(self.vocab_size, self.vector_dim, input_length=1, name='embedding', 
+		context = self.Embedding(self.vocab_size, self.vector_dim, input_length=1, name='context embedding', 
 			embeddings_initializer=self.RandomNormal(mean=0.0, stddev=1, seed=123), embeddings_regularizer=None, activity_regularizer=None, 
 			embeddings_constraint=None, mask_zero=False, input_length=None)(self.input_context)
 		context = self.Reshape((vector_dim, 1))(context)
@@ -57,10 +54,15 @@ class Word2Vec_Classifier(tf.keras.Model):
 		dot_product = dot([target, context], axes=0, normalize=False)
 		dot_product = Reshape((1,))(dot_product)
 
-		# add the sigmoid output layer
+		# our output layer uses a sigmoid activation function for binary classification
 		output_layer = Dense(1, activation='sigmoid')(dot_product)
 
-		return self.built_model(self.input_layer, self.output_layer)
+		primary_model = Model(input=[input_target, input_context], output=output)
+		primary_model.compile(loss='binary_crossentropy', optimizer='rmsprop')
+
+		secondary_validation_model = Model(input=[input_target, input_context], output=similarity)
+
+		return primary_model, secondary_validation_model
 
 	# Model Callbacks
 	modelcheckpoint_callback = ModelCheckpoint(
