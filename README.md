@@ -1,4 +1,6 @@
+
 ## Authors:
+
 Andre Zanchetta (https://github.com/adlzanchetta)
 
 Dennis Nguyen-Do (https://github.com/SJHH-Nguyen-D/steam_reviews_analysis)
@@ -12,7 +14,9 @@ This is a machine-learning based culminating group project for our Neural Networ
 
 The model architecture diagram can be seen below: (subject to change)
 
-![Architecture Word2Vec](https://github.com/adlzanchetta/steam_reviews_analysis/word2vec_skipgram_architecture.png)
+
+![Architecture of Word2Vec](https://github.com/adlzanchetta/steam_reviews_analysis/word2vec_skipgram_architecture.png)
+
 
 ## Dataset
 
@@ -49,10 +53,11 @@ The link to the AWS S3 bucket containing the steam game review data for our proj
 ## Code
 The code for our project is partitioned into the following segments:
 
-* The [utils](https://github.com/adlzanchetta/steam_reviews_analysis/master/utils/) folder contains the necessary functions to read the datasets and visualize the plots, as well as the constants, abstracted from the main file for a cleaner script. An internal segment, *harvesters*, contains the scripts written specifically for the purpose of harvesting the data used.
-* The [utils.py](https://github.com/adlzanchetta/steam_reviews_analysis/master/utils/utils.py) file inside folder of that namesake that contains the necessary functions to read the datasets and visualize the plots.
-* The [constants.py](https://github.com/adlzanchetta/steam_reviews_analysis/master/utils/constants.py) file inside folder of that namesake that contains the necessary functions to read the datasets and visualize the plots.
-* The [main.py](https://github.com/adlzanchetta/steam_reviews_analysis/master/utils/main.py) This contains the main file for running our model. We use argparse to pass in the model hyperparameters and saving/loading options.
+* The [utils](https://github.com/adlzanchetta/steam_reviews_analysis/tree/master/utils) folder contains the necessary functions to read the datasets and visualize the plots, as well as the constants, abstracted from the main file for a cleaner script.
+* The [utils.py](https://github.com/adlzanchetta/steam_reviews_analysis/tree/master/utils/utils.py) file inside folder of that namesake that contains the necessary functions to read the datasets and visualize the plots.
+* The [harvesters](https://github.com/adlzanchetta/steam_reviews_analysis/tree/master/utils/harvesters) This directory contains the scripts that were required to request, pull and parse Steam game reviews from the Steam API and parse them into loadable formats for our analysis and modeling. The individual functions of the scripts are explained above.
+* The [constants.py](https://github.com/adlzanchetta/steam_reviews_analysis/tree/master/utils/constants.py) file inside folder of that namesake that contains the necessary functions to read the datasets and visualize the plots.
+* The [main.py](https://github.com/adlzanchetta/steam_reviews_analysis/main.py) This contains the main file for running our model. We use argparse to pass in the model hyperparameters and saving/loading options.
 
 ## Prerequisites
 All python packages needed are listed in utils/requirements.txt file and can be installed simply using the pip command for python3.6.
@@ -84,7 +89,6 @@ This command lists all the containers that are running at the moment:
 ```bash
 sudo docker ps -a
 ```
-
 This command also lists all the containers that are running at the moment:
 ```bash
 sudo docker container ls
@@ -98,8 +102,6 @@ This command lists all the images that are saved by Docker:
 sudo docker image ls
 ```
 This command removes the docker image:
-
 ```bash
 sudo docker rmi -f <docker_image_id>
 ```
-sudo docker rmi -f <docker_image_id>

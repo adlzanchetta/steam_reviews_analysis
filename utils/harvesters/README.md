@@ -61,3 +61,11 @@ This script has the sole purpose of retrieving the complete daily timeseries of 
 **Input:** A .json file with a list of all Steam apps available (as the output of the *harvest_apps.py* script)
 
 **Outputs:** A .json file with the complete timeseries of concurrent players of each app in the input argument.
+
+## preprocess_count_reviews.py
+
+This script has the sole purpose of counting the reviews retrieved each day for each app and synthesise into a series of timeseries.
+
+**Input:** A folder full of .json files with reviews from apps (as the output of the *harvest_concurrentplayers.py* script)
+
+**Outputs:** A .json file with the timeseries of total daily review counts, separated by app Id.
