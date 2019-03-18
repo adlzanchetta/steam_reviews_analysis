@@ -1,5 +1,5 @@
 ## Authors:
-Andre Zanchetta (https://github.com/adlzanchetta/steam_reviews_analysis)
+Andre Zanchetta (https://github.com/adlzanchetta)
 
 Dennis Nguyen-Do (https://github.com/SJHH-Nguyen-D/steam_reviews_analysis)
 

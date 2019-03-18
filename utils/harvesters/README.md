@@ -1,8 +1,8 @@
-### Harvesting scripts
+# Harvesting scripts
 
 4 plain Python scripts were developed for harvesting the data needed for this project. Each of them are described in the expected use sequence as follows.
 
-#### harvest_apps.py
+## harvest_apps.py
 
 This script has the sole purpose of retrieving the basic information of EVERY app currently available in the Valve's STEAM database.
 
@@ -14,7 +14,7 @@ As there is an endpoint in our source API that already returns the whole data in
 
 **Output:** A .json file with a list of the ID and Title of each app in Steam.
 
-#### app_selector.py
+## app_selector.py
 
 This script has the sole purpose of identifying the Steam apps that fit an specific criteria.
 
@@ -36,7 +36,7 @@ As the endpoint in the API used only returns the necessary information for one a
 
 **Output:** A .json file with a detailed list of all apps that matched the specified criteria.
 
-#### harvest_reviews.py
+## harvest_reviews.py
 
 This script has the sole purpose of retrieving the public reviews associated to an Steam app. It is expected to be executed by a batch call that iterates over a set of Steam API IDs (as the output of *harvest_apps.py* or *app_selector.py*).
 
@@ -52,7 +52,7 @@ This script has the sole purpose of retrieving the public reviews associated to 
 
 **Output:** A .csv file containing all the reviews harvested.
 
-#### harvest_concurrentplayers.py
+## harvest_concurrentplayers.py
 
 This script has the sole purpose of retrieving the complete daily timeseries of concurrent players.
 
